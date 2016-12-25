@@ -1,7 +1,7 @@
 {
   "name": "auth0-node-api-sample",
   "version": "0.0.1",
-  "description": "Change Password with Email Verification",
+  "description": "Resource API Server fronting a Postgres DB Account table - compatible with Custom DB IdP table",
   "main": "server.js",
   "scripts": {
     "start": "wt-bundle server.js -o ./build/bundle.js && node ./build/bundle.js",
