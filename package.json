@@ -1,0 +1,48 @@
+{
+  "name": "auth0-node-api-sample",
+  "version": "0.0.1",
+  "description": "Change Password with Email Verification",
+  "main": "server.js",
+  "scripts": {
+    "start": "wt-bundle server.js -o ./build/bundle.js && node ./build/bundle.js",
+    "bundle": "wt-bundle webtask.js -o ./build/bundle.js",
+    "edit": "wt edit --profile demo-workshop-default node-api-sample",
+    "update": "wt update --profile demo-workshop-default node-api-sample build/bundle.js",
+    "deploy": "npm run bundle && npm run update",
+    "create": "wt create --name node-api-sample --profile demo-workshop-default build/bundle.js",
+    "logs": "wt logs --profile demo-workshop-default"
+  },
+  "keywords": [
+    "auth0",
+    "account",
+    "api",
+    "webtask"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tawawa/auth0-node-api-sample.git"
+  },
+  "author": "arcseldon",
+  "license": "MIT",
+  "dependencies": {
+    "auth0-api-jwt-rsa-validation": "0.0.1",
+    "body-parser": "~1.12.4",
+    "boom": "^3.2.2",
+    "cors": "^2.8.1",
+    "dotenv": "^2.0.0",
+    "express": "4.14.0",
+    "express-jwt": "^5.1.0",
+    "lodash": "^4.8.2",
+    "morgan": "~1.5.3",
+    "node-uuid": "^1.4.3",
+    "pg": "^4.3.0",
+    "pg-hstore": "^2.3.2",
+    "q": "^1.4.1",
+    "ramda": "^0.18.0",
+    "request": "^2.67.0",
+    "sequelize": "^3.1.1"
+  },
+  "devDependencies": {
+    "webtask-tools": "^3.1.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Auth0 Node API Sample",
+  "name": "auth0-node-api-sample",
+  "version": "1.0.0",
+  "author": "arcseldon",
+  "description": "Sample secured node api using JWT token scopes verification (access_token)",
+  "type": "application",
+  "repository": "https://github.com/tawawa/auth0-node-api-sample.git",
+  "keywords": [
+    "auth0",
+    "account",
+    "api",
+    "webtask"
+  ]
+}
