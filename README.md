@@ -2,8 +2,11 @@
 
 A sample Resource API with CRUD ops protected by JWT scopes (access_token) & postgres backend
 
-## Running locally
+## Companion Repo
 
+See [auth0-react-redux-api-client](https://github.com/tawawa/auth0-react-redux-api-client)
+
+## Running locally
 
 To run the sample extension locally:
 
