@@ -1,6 +1,8 @@
 # What is it?
 
 A sample Resource API with CRUD ops protected by JWT scopes (access_token) & postgres backend
+The domain object (account) corresponds to a typical Auth0 Custom DB table and this API can
+therefore act as a webservice fronting Postgres for Custom DB HTTP endpoint access (from Rules, Custom DB Scripts or other webtasks).
 
 ## Companion Repo
 
