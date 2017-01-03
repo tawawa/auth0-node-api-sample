@@ -38,6 +38,28 @@ To expose the running application over internet use:
 
 Now use the generated endpoints in configuration.ENDPOINT etc of your custom db scripts.
 
+## Postgres Relational DB
+
+This uses a very simple, single postgres table. Details as follows
+
+```
+select column_name, data_type, character_maximum_length
+from INFORMATION_SCHEMA.COLUMNS where table_name = 'accounts';
+
+
+id    character varying    255
+email    character varying    255
+password    character varying    255
+nickname    character varying    255
+employee_id    character varying    255
+company_code    character varying    255
+email_verified    character varying    255
+createdAt    timestamp with time zone    
+updatedAt    timestamp with time zone  
+
+
+```
+
 
 ## Deploying as Webtask 
 
