@@ -166,6 +166,57 @@ var routes = (app, router) => {
     });
   });
 
+
+  // CUSTOM DB ENDPOINTS - here username is employeeId, company code is expected too, and so is password
+
+  router.post('/loginByEmployeeId', function (req, res) {
+
+    var employee_id = req.body.employee_id;
+    var company_code = req.body.company_code;
+    var password = req.body.password;
+
+    if (!employee_id || !company_code || !password) {
+      return res.status(401).json({
+        message: 'Unauthorized - employee_id, company_code and password all required'
+      });
+    }
+
+    // find the user by employeeId, companyCode and password
+    accounts.loginByEmployeeId(employee_id, company_code, password, (err, account) => {
+      if (err) {
+        console.error(err);
+        return res(Boom.badRequest(err));
+      }
+      console.log('Account found');
+      res.json(account);
+    });
+
+  });
+
+  router.post('/loginByEmail', function (req, res) {
+
+    var email = req.body.email;
+    var password = req.body.password;
+
+    if (!email || !password) {
+      return res.status(401).json({
+        message: 'Unauthorized - email and password are required'
+      });
+    }
+
+    // find the user by employeeId, companyCode and password
+    accounts.loginByEmail(email, password, (err, account) => {
+      if (err) {
+        console.error(err);
+        return res(Boom.badRequest(err));
+      }
+      console.log('Account found');
+      res.json(account);
+    });
+
+  });
+
+
   // This endpoint would be called by webtask-gallery to dicover your metadata
   app.get('/meta', function (req, res) {
     res.status(200).send(metadata);

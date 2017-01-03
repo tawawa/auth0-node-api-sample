@@ -84,13 +84,46 @@ var accounts = function (config) {
     });
   }
 
+  // Custom DB Specific Endpoints
+
+  function loginByEmployeeId(employee_id, company_code, password, callback) {
+    AccountStore.find({
+      where: {employee_id: employee_id, company_code: company_code, password: password}
+    }).then((account) => {
+      if (!account) {
+        return callback('Could not find account with provided login credentials.');
+      }
+      callback(null, account.dataValues);
+    }).catch(err => {
+      console.error(err);
+      return callback('Error - could not get account')
+    });
+  }
+
+  function loginByEmail(email, password, callback) {
+    AccountStore.find({
+      where: {
+        email: email,
+        password: password
+      }
+    }).then((account) => {
+      if (!account) {
+        return callback('Could not find account.');
+      }
+      callback(null, account.dataValues);
+    });
+  }
+
+
   var api = {
     createAccount,
     getAccountByEmail,
     getAccountById,
     getAccounts,
     updateAccountById,
-    deleteAccountById
+    deleteAccountById,
+    loginByEmployeeId,
+    loginByEmail
   };
 
   var deferred = Q.defer();

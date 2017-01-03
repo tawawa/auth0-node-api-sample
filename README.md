@@ -19,7 +19,25 @@ $ npm install
 $ npm start
 ```
 
+Alternatively, just do `node server.js` - useful for running in debug mode etc
+
+
 Then go to `http://localhost:3001/api/v1/accounts`
+
+## To use as Custom DB
+
+The endpoints include the REST endpoints to handle account management & custom signup requirements from within an application - see companion React-Redux project for insights on a UI layer to this API.
+
+However, this project also includes endpoints for integration with the Auth0 Custom DB scripts. To run the API locally yet have it called from Auth0 Dashboard scripts, use ngrok to expose your locally running instance over the internet.
+
+Install `ngrok` using `npm i ngrok -g`
+
+To expose the running application over internet use:
+
+`ngrok http 3001 -bind-tls=false`
+
+Now use the generated endpoints in configuration.ENDPOINT etc of your custom db scripts.
+
 
 ## Deploying as Webtask 
 
