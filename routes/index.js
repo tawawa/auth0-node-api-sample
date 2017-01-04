@@ -250,6 +250,9 @@ var routes = (app, router) => {
         console.error(err);
         return resb.boom.badRequest(err);
       }
+      if (!account) {
+        return res.boom.notFound('User not found');
+      }
       var accountId = account.id;
       // update values
       var data = {};
@@ -260,7 +263,6 @@ var routes = (app, router) => {
         }
         account.email_verified = email_verified;
         console.log('Account verified');
-        console.log(account);
         res.json({
           message: 'Account verified'
         });
@@ -280,6 +282,9 @@ var routes = (app, router) => {
       if (err) {
         console.error(err);
         return res.boom.badRequest(err);
+      }
+      if (!account) {
+        return res.boom.notFound('User not found');
       }
       res.json(account);
     });
