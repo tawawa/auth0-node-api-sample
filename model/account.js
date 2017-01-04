@@ -3,7 +3,7 @@
 var uuid = require('node-uuid');
 
 module.exports = function (email, password, nickname, email_verified, employee_id, company_code) {
-  this.id = uuid.v1();
+  //this.id = uuid.v1();
   this.email = email;
   this.password = password;
   this.nickname = nickname;
