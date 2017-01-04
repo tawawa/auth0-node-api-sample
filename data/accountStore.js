@@ -14,7 +14,7 @@ var accountStore = function (config) {
   });
 
   const Account = pgClient.define('account', {
-    id: {type: Sequelize.STRING, primaryKey: true},
+    id: {type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
     email: {type: Sequelize.STRING},
     password: {type: Sequelize.STRING},
     nickname: {type: Sequelize.STRING},
@@ -35,4 +35,3 @@ var accountStore = function (config) {
 };
 
 module.exports = accountStore;
-
