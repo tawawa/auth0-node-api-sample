@@ -6,8 +6,8 @@ therefore act as a webservice fronting Postgres for Custom DB HTTP endpoint acce
 
 ## Companion Repos
 
-See [auth0-react-redux-api-client](https://github.com/tawawa/auth0-react-redux-api-client)
-See [https://github.com/tawawa/auth0-github-source-control](git@github.com:tawawa/auth0-github-source-control.git)
+- [auth0-react-redux-api-client](https://github.com/tawawa/auth0-react-redux-api-client)
+- [https://github.com/tawawa/auth0-github-source-control](git@github.com:tawawa/auth0-github-source-control.git)
 
 ## Running locally
 
