@@ -4,9 +4,10 @@ A sample Resource API with CRUD ops protected by JWT scopes (access_token) & pos
 The domain object (account) corresponds to a typical Auth0 Custom DB table and this API can
 therefore act as a webservice fronting Postgres for Custom DB HTTP endpoint access (from Rules, Custom DB Scripts or other webtasks).
 
-## Companion Repo
+## Companion Repos
 
 See [auth0-react-redux-api-client](https://github.com/tawawa/auth0-react-redux-api-client)
+See [https://github.com/tawawa/auth0-github-source-control](git@github.com:tawawa/auth0-github-source-control.git)
 
 ## Running locally
 
@@ -41,27 +42,42 @@ Now use the generated endpoints in configuration.ENDPOINT etc of your custom db 
 ## Postgres Relational DB
 
 This uses a very simple, single postgres table. Details as follows
+The table will be automatically generated when you run:
+
+`npm run createDB`
+
+or
+
+`node createDB.js`
+
+Please ensure you supplied the correct DB connection settings in `.env` first
+
+Sample `.env` populated:
 
 ```
-select column_name, data_type, character_maximum_length
-from INFORMATION_SCHEMA.COLUMNS where table_name = 'accounts';
-
-
-id    character varying    255
-email    character varying    255
-password    character varying    255
-nickname    character varying    255
-employee_id    character varying    255
-company_code    character varying    255
-email_verified    character varying    255
-createdAt    timestamp with time zone    
-updatedAt    timestamp with time zone  
-
-
+AUTH0_ISSUER=https://demo.auth0.com/
+AUTH0_AUDIENCE=https://resourceapi.com
+POSTGRES_DATABASE=mypostgresdb
+POSTGRES_HOST=arcseldon-postgres-db.adfadfadfadf.ap-northeast-1.rds.amazonaws.com
+POSTGRES_USERNAME=YOUR_USER
+POSTGRES_PASSWORD=YOUR_PASSWORD
+# ALLOWED_IP_LIST=::ffff:127.0.0.1
+# ALLOWED_IP_LIST=127.0.0.1
+ALLOWED_IP_LIST=138.91.154.99,54.221.228.15,54.183.64.135,54.67.77.38,54.67.15.170,54.183.204.205,54.173.21.107,54.85.173.28,127.0.0.1
 ```
+
+Use `.env.sample` as a starting point if you like
+
+## Using Postman
+
+Since this is a headless API, there is a [Postman](https://www.getpostman.com/apps) collection should you wish to use this tool to test the endpoints.
+
+See the `postman` directory in base of project and you can import the collection it contains using the postman import feature.
 
 
 ## Deploying as Webtask 
+
+### TODO - not yet working... (dependencies issue on webtask side - code is good)
 
 Rename `.env.sample` as `.env` and add the required values for each key value pair.
 

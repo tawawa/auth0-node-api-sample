@@ -4,6 +4,7 @@
   "description": "Resource API Server fronting a Postgres DB Account table - compatible with Custom DB IdP table",
   "main": "server.js",
   "scripts": {
+    "createDB": "node createDB.js",
     "start": "wt-bundle server.js -o ./build/bundle.js && node ./build/bundle.js",
     "bundle": "wt-bundle webtask.js -o ./build/bundle.js",
     "edit": "wt edit --profile demo-workshop-default node-api-sample",
