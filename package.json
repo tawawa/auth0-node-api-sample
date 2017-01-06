@@ -11,6 +11,7 @@
     "update": "wt update --profile demo-workshop-default node-api-sample build/bundle.js",
     "deploy": "npm run bundle && npm run update",
     "create": "wt create --name node-api-sample --profile demo-workshop-default build/bundle.js",
+    "ngrok": "ngrok http 3001 -bind-tls=false",
     "logs": "wt logs --profile demo-workshop-default"
   },
   "keywords": [
